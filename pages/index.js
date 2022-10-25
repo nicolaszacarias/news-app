@@ -15,18 +15,22 @@ export default function Home({articles}) {
 // setArticles(articles)})}, [])
   return (
     <PageLayout title="NewsApp - Home">
+      <Head>
+        <meta charset='utf-8' />
+        <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/journal/bootstrap.min.css'/>
+      </Head>
     <div className={styles.container}>
       {articles.length === 0 && <p>No hay articulos</p>}
       {articles.length > 0 && articles.map((article, index) => (
         <div key={index}>
-          <Image src={article.urlToImage} alt={`image for the article ${article.title}`} 
+          <img src={article.urlToImage} alt={`image for the article ${article.title}`} 
           width={450}
           height={300}
           layout="responsive"
           priority={true}
           placeholder="blur"
           blurDataURL='"https://www.gannett-cdn.com/presto/2022/10/18/USAT/bf61ec97-8f58-41cc-9b33-4b1115909642-AP_Russia_Ukraine_War_12.jpg?auto=webp&crop=4999,2812,x0,y254&format=pjpg&width=1200"'
-           ></Image>
+           ></img>
           <h2>{article.title}</h2>
           <p>{article.description}</p>
         </div>
@@ -58,7 +62,7 @@ export default function Home({articles}) {
 
 
 export async function getServerSideProps(context){
-const response = await fetch("https://newsapi.org/v2/top-headlines?country=us&apiKey=4d55c3ad697940c891c9d130fb40ff82")
+const response = await fetch("https://newsapi.org/v2/top-headlines?country=ar&apiKey=4d55c3ad697940c891c9d130fb40ff82")
 const {articles} = await response.json()
 return {
   props: {
