@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react'
 // esto lo que hace es no tener que recargar toda la pagina para entrar por ejemplo al about SINGLE PAGE APLICATION
 import styles from '../styles/Home.module.css'
 import PageLayout from './components/pageLayout'
+// import Footer from "./components/footer"
 
 export default function Home({articles}) {
   // const [articles, setArticles] = useState([])
@@ -15,7 +16,10 @@ export default function Home({articles}) {
 // setArticles(articles)})}, [])
   return (
     <PageLayout title="NewsApp - Home">
-      <div onClick={Detailnotices}>deportes</div>
+      <div >
+        <Link href="/deportes">deportes</Link>
+        <Link href="/politicas">Politica</Link>
+      </div>
     <div className={styles.container}>
       {articles.length === 0 && <p>No hay articulos</p>}
       {articles.length > 0 && articles.map((article, index) => (
@@ -37,6 +41,7 @@ export default function Home({articles}) {
      {/* <h1>aprendiendo next desde cero</h1>
      <Link href='/about'>Ir a about</Link> */}
     </div>
+    {/* <Footer/> */}
     </PageLayout>
   )
 }
@@ -69,6 +74,7 @@ return {
   }
 }
 }
+
 
 // export async function detailnotice({articles}){
 // if(articles.source.name === "TyC Sports"  || "Olé")
