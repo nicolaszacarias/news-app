@@ -1,6 +1,7 @@
 
 import Head from 'next/head'
 import Link from "next/link";
+import Footer from "./footer"
 export default function PageLayout({children, title = "NewsAPP"}) {
     return (
         <>
@@ -23,7 +24,8 @@ export default function PageLayout({children, title = "NewsAPP"}) {
     display: flex;
    }
    `}</style>
+    <Footer/>
    </>
     )
-    
+
 }
