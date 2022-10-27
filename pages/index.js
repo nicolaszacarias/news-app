@@ -16,10 +16,10 @@ export default function Home({articles}) {
 // setArticles(articles)})}, [])
   return (
     <PageLayout title="NewsApp - Home">
-      <div >
+      {/* <div >
         <Link href="/deportes">deportes</Link>
         <Link href="/politicas">Politica</Link>
-      </div>
+      </div> */}
     <div className={styles.container}>
       {articles.length === 0 && <p>No hay articulos</p>}
       {articles.length > 0 && articles.map((article, index) => (
