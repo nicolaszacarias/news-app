@@ -15,10 +15,6 @@ export default function Home({articles}) {
 // setArticles(articles)})}, [])
   return (
     <PageLayout title="NewsApp - Home">
-      <Head>
-        <meta charset='utf-8' />
-        <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/journal/bootstrap.min.css'/>
-      </Head>
     <div className={styles.container}>
       {articles.length === 0 && <p>No hay articulos</p>}
       {articles.length > 0 && articles.map((article, index) => (
